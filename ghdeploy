@@ -2,8 +2,11 @@
 
 gitbook build .
 rm -rf /tmp/gitbook
+mkdir -p /tmp/gitbook
 cp -rf _book/* /tmp/gitbook
 cd /tmp/gitbook
+git init
+git remote add origin git@github.com:talkincode/ToughRADIUS-GitBook.git
 git add .
-git ci -m 'deploy gitbook'
-git push origin gh-pages
+git commit -am 'deploy gitbook'
+git push -f origin master:gh-pages
