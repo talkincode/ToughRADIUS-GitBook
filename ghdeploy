@@ -1,5 +1,9 @@
 #!/bin/bash
 
+git add .
+git commit -am "commit toughradius gitbook `date +%Y-%m-%d" "%H:%M:%S`"
+git push  origin master
+
 gitbook build .
 rm -rf /tmp/gitbook
 mkdir -p /tmp/gitbook
