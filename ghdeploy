@@ -1,0 +1,9 @@
+#!/bin/bash
+
+gitbook build .
+rm -rf /tmp/gitbook
+cp -rf _book/* /tmp/gitbook
+cd /tmp/gitbook
+git add .
+git ci -m 'deploy gitbook'
+git push origin gh-pages
