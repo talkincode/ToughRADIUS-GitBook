@@ -6,6 +6,10 @@
 
 你要懂一点技术，比如安装操作系统，会在终端敲命令。
 
+![][image-1]
+
+ToughRADIUS 是Docker技术的拥抱者，当你决定使用ToughRADIUS，你也需要去学习关于Docker的知识。
+
 ## 安装部署
 
 ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基础是CentOS 7。
@@ -84,3 +88,5 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 [1]:	https://github.com/boot2docker/windows-installer/releases/download/v1.8.0/docker-install.exe
 [2]:	https://github.com/boot2docker/windows-installer/releases/download/v1.8.0/docker-install.exe
+
+[image-1]:	../imgs/docker.png
