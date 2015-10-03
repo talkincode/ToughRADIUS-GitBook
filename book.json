@@ -16,7 +16,8 @@
     "variables": {},
     "links": {
         "sidebar": {
-            "Star ToughRADIUS in Github": "https://github.com/talkincode/ToughRADIUS"
+            "Star ToughRADIUS in Github": "https://github.com/talkincode/ToughRADIUS",
+            "下载 PDF 文件": "https://github.com/talkincode/ToughRADIUS-GitBook/raw/master/book.pdf"
         },
         "sharing": {
             "google": null,
