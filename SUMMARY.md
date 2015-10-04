@@ -8,6 +8,7 @@
     - [Linux PPTP 对接](toughradius/pptp.md)
     - [Linux L2TP 对接](toughradius/l2tp.md)
     - [操作手册](toughradius/manual.md)
+        - [系统维护篇](toughradius/manual_control.md)
         - [系统管理篇](toughradius/manual_system.md)
         - [营业管理篇](toughradius/manual_business.md)
         - [维护管理篇](toughradius/manual_ops.md)
