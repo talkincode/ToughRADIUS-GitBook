@@ -12,4 +12,4 @@
         - [营业管理篇](toughradius/manual_business.md)
         - [维护管理篇](toughradius/manual_ops.md)
         - [查询统计篇](toughradius/manual_stat.md)
-    - [开发指南](toughradius/develop.md)
+    - [开发指南](toughradius/developer.md)
