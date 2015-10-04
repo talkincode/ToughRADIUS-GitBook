@@ -16,15 +16,19 @@
 
 **Github 项目地址**：[https://github.com/talkincode/ToughRADIUS][1]
 
+**Github 文档地址**：[https://github.com/talkincode/ToughRADIUS-GitBook][2]
+
 ## 感谢
 
-感谢 ToughRADIUS开发团队的家属，没有你们在背后默默的支持，我们不可能顺利的前进。
+感谢 ToughRADIUS开发团队的家人，没有你们在背后默默的支持，我们不可能顺利的前进。
 
-感谢 ToughRADIUS 用户以及各界友人的支持，如果没有你们的积极反馈，ToughRADIUS不可能这么快快速的推进。
+感谢 ToughRADIUS 用户以及各位友人的支持，如果没有你们的支持和反馈，ToughRADIUS不可能这么快速的推进。
 
 感谢 ToughRADIUS 开发团队的默默奉献，我们是一个棒棒哒的团队。
 
 
+
 [1]:	https://github.com/talkincode/ToughRADIUS
+[2]:	https://github.com/talkincode/ToughRADIUS-GitBook
 
 [image-1]:	imgs/toughradius-logo.png
