@@ -14,3 +14,4 @@
         - [维护管理篇](toughradius/manual_ops.md)
         - [查询统计篇](toughradius/manual_stat.md)
     - [开发指南](toughradius/developer.md)
+        - [定制你的ToughRADIUS专有版本](toughradius/dev_custom.md)
