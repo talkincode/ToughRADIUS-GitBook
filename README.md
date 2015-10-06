@@ -26,8 +26,6 @@
 
 感谢 ToughRADIUS 开发团队的默默奉献，我们是一个棒棒哒的团队。
 
-
-
 [1]:	https://github.com/talkincode/ToughRADIUS
 [2]:	https://github.com/talkincode/ToughRADIUS-GitBook
 
