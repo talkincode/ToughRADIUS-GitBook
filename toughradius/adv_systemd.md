@@ -21,11 +21,10 @@
 	[Install] 
 	WantedBy=multi-user.target 
 
-其中trserver就是你的容器实例的名称。通过以下指令设置开机启动开关。
+其中trserver就是你的容器实例的名称。toughradius是服务名，通过以下指令设置开机启动开关。
 
-	systemctl enable trserver
+	systemctl enable toughradius
 
 由于我们的Docker容器都依赖于docker服务本身，因此也要保证docker服务开启。
 
 	systemctl enable docker
-
