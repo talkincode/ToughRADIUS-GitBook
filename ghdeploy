@@ -18,7 +18,7 @@ cp CNAME /tmp/gitbook
 cp -f favicon.ico /tmp/gitbook/gitbook/images
 cd /tmp/gitbook
 
-if [ $is_first == 1]; then
+if [ $is_first -eq 1 ]; then
     git init
     git remote add origin git@github.com:talkincode/ToughRADIUS-GitBook.git
     git add .
