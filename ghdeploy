@@ -1,5 +1,4 @@
 #!/bin/bash
-is_first=0
 
 git add .
 git commit -am "commit toughradius gitbook `date +%Y-%m-%d" "%H:%M:%S`"
@@ -10,19 +9,23 @@ gitbook build .
 #rm -rf /tmp/gitbook
 if [ ! -d /tmp/gitbook ]; then
     mkdir -p /tmp/gitbook
-    $is_first=1
-fi
-
-cp -rf _book/* /tmp/gitbook
-cp CNAME /tmp/gitbook
-cp -f favicon.ico /tmp/gitbook/gitbook/images
-cd /tmp/gitbook
-
-if [ $is_first -eq 1 ]; then
+    cp -rf _book/* /tmp/gitbook
+    cp CNAME /tmp/gitbook
+    cp -f favicon.ico /tmp/gitbook/gitbook/images
+    cd /tmp/gitbook
     git init
     git remote add origin git@github.com:talkincode/ToughRADIUS-GitBook.git
     git add .
     git commit -am "deploy gitbook `date +%Y-%m-%d" "%H:%M:%S`"
     git push -f origin master:gh-pages
+
+else
+    cp -rf _book/* /tmp/gitbook
+    cp CNAME /tmp/gitbook
+    cp -f favicon.ico /tmp/gitbook/gitbook/images
+    cd /tmp/gitbook
+    git add .
+    git commit -am "deploy gitbook `date +%Y-%m-%d" "%H:%M:%S`"
+    git push origin master:gh-pages
 fi
 
