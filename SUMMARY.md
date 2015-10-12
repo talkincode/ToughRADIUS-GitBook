@@ -4,6 +4,7 @@
 	- [高级技巧](toughradius/advance.md)
         - [系统服务设置](toughradius/adv_systemd.md)
         - [服务端口映射](toughradius/adv_portmap.md)
+        - [用户强制下线](toughradius/adv_disconnect.md)
     - [RouterOS 对接](toughradius/routeros.md)
     - [Linux PPTP 对接](toughradius/pptp.md)
     - [Linux L2TP 对接](toughradius/l2tp.md)
