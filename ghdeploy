@@ -10,7 +10,7 @@ gitbook build .
 #rm -rf /tmp/gitbook
 if [ ! -d /tmp/gitbook ]; then
     mkdir -p /tmp/gitbook
-    is_first=1
+    $is_first=1
 fi
 
 cp -rf _book/* /tmp/gitbook
