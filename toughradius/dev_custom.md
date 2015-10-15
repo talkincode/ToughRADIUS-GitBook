@@ -30,7 +30,7 @@
 
 ## 定制Docker构建脚本
 
-修改 Dockerfile构建脚本（针对灵雀云的在docker_osc目录），修改以下内容：
+修改 Dockerfile构建脚本，修改以下内容：
 
 	RUN git clone -b stable https://github.com/talkincode/ToughRADIUS.git /opt/toughradius
 
@@ -38,32 +38,30 @@
 
 	RUN git clone -b master <你的仓库地址>  /opt/toughradius
 
-修改服务脚本 toughrad （针对灵雀云的在docker_osc目录）修改以下内容：
+修改服务脚本 toughrad 修改以下内容：
 
 	upgrade()
 	{
-	echo 'starting upgrade...'
-	cd ${appdir} && git pull origin stable
-	git checkout stable
-	supervisorctl restart radiusd
-	supervisorctl restart admin
-	supervisorctl restart customer
-	supervisorctl status
-	echo 'upgrade done'
+		echo 'starting upgrade...'
+		cd ${appdir} && git checkout stable && git pull origin stable
+		supervisorctl restart radiusd
+		supervisorctl restart admin
+		supervisorctl restart customer
+		supervisorctl status
+		echo 'upgrade done'
 	}
 
 修改为：
 
 	upgrade()
 	{
-	echo 'starting upgrade...'
-	cd ${appdir} && git pull origin master
-	git checkout master
-	supervisorctl restart radiusd
-	supervisorctl restart admin
-	supervisorctl restart customer
-	supervisorctl status
-	echo 'upgrade done'
+		echo 'starting upgrade...'
+		cd ${appdir} && git checkout master && git pull origin master
+		supervisorctl restart radiusd
+		supervisorctl restart admin
+		supervisorctl restart customer
+		supervisorctl status
+		echo 'upgrade done'
 	}
 
 ## 开始定制你的专有版本
@@ -74,7 +72,7 @@
 
 可以修改一个自己的酷炫版本号：
 
-文件在 ../toughradius/__init__.py
+文件在 ../toughradius/\_\_init\_\_.py
 
 	＃!/usr/bin/env python
 	
