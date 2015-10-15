@@ -16,7 +16,7 @@ ToughRADIUS默认采用了SqLite存储数据，通常这足够运营上千的用
 通过MySQL客户端执行以下语句，请自行修改相关用户密码信息。
 
 	create database toughradius DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
-	GRANT ALL ON tradmin.* TO toughradius@‘%' IDENTIFIED BY ‘trradiusd' WITH GRANT OPTION; 
+	GRANT ALL ON toughradius.* TO tradmin@‘%' IDENTIFIED BY ‘trradiusd' WITH GRANT OPTION; 
 	FLUSH PRIVILEGES; 
 
 ### 配置ToughRADIUS
