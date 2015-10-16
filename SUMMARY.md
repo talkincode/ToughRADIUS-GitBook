@@ -19,3 +19,4 @@
 
   - [开发指南](toughradius/developer.md)
     - [定制你的ToughRADIUS专有版本](toughradius/dev_custom.md)
+    - [mschapv2的认证实现](toughradius/dev_mschapv2.md)
