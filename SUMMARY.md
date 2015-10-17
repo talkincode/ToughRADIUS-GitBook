@@ -6,7 +6,7 @@
     - [服务端口映射](toughradius/adv_portmap.md)
     - [用户强制下线](toughradius/adv_disconnect.md)
     - [MySQL数据库配置](toughradius/adv_mysql_config.md)
-    - [客户端认证报691的问题诊断](toughradius/adv_about691.md)
+    - [客户端691错误诊断](toughradius/adv_about691.md)
 
   - [RouterOS 对接](toughradius/routeros.md)
   - [Linux PPTP 对接](toughradius/pptp.md)
