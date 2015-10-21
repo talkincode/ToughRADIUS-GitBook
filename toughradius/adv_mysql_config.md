@@ -5,7 +5,23 @@ ToughRADIUS默认采用了SqLite存储数据，通常这足够运营上千的用
 
 在ToughRADIUS发布的Docker镜像中，已经内置了MySQL的驱动，因此我们要做的仅仅是对数据库的配置。
 
-首先安装配置我们的MySQL数据库，关于MySQL服务的安装配置，有很多资料可以参考，这里不在赘述。
+首先安装配置我们的MySQL数据库，关于独立主机MySQL服务的安装配置，有很多资料可以参考，这里不在赘述，但我们推荐使用Docker镜像来部署Mysql，更加简单方便。
+
+-  创建一个Mysql容器实例并自动创建一个数据库
+
+	$ mkdir -p /home/var/lib/mysql  #创建一个文件夹来存放mysql数据文件
+	$ docker run --name mysql -d -p 3306:3306 \
+		-v /home/var/lib/mysql:/var/lib/mysql \
+		-e MYSQL_USER=tradmin \
+		-e MYSQL_PASSWORD=trradiusd \
+		-e MYSQL_DATABASE=toughradius \
+		-e MYSQL_ROOT_PASSWORD=myroot talkincode/docker-mysql
+
+>   `MYSQL_ROOT_PASSWORD`: root用户密码
+>   `MYSQL_DATABASE`: 自动创建一个数据库，非必选
+>   `MYSQL_USER`: 随数据库创建一个用户
+>   `MYSQL_PASSWORD`: 新建用户的密码
+
 
 ### 备份数据库
 
@@ -13,7 +29,7 @@ ToughRADIUS默认采用了SqLite存储数据，通常这足够运营上千的用
 
 ### 创建数据库
 
-通过MySQL客户端执行以下语句，请自行修改相关用户密码信息。
+通过MySQL客户端执行以下语句，请自行修改相关用户密码信息。如果已经使用Docker镜像自动创建数据库，则忽略。
 
 	create database toughradius DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
 	GRANT ALL ON toughradius.* TO tradmin@‘%' IDENTIFIED BY ‘trradiusd' WITH GRANT OPTION; 
