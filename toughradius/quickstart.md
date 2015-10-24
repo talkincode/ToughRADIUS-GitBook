@@ -68,6 +68,16 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 系统管理：http://ipaddr:1819   管理权限 ctlman/ctlroot
 
+#### 防火墙设置
+
+注意：如果访问不了web，可能是防火墙禁止了相关端口，如果不打算用内置防火墙，可以关闭防火墙。
+
+	systemctl stop firewalld.service
+
+禁止firewall开机启动，防火墙就永久性关闭了。
+
+	systemctl disable firewalld.service
+
 ### 容器的基本管理
 
 *启动容器*
@@ -92,7 +102,6 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 国内灵雀云 ：index.alauda.cn/toughstruct/toughradius
 
-国内daocloud ：daocloud.io/talkincode/toughradius
 
 [1]:	https://github.com/boot2docker/windows-installer/releases/download/v1.8.0/docker-install.exe
 [2]:	https://github.com/boot2docker/windows-installer/releases/download/v1.8.0/docker-install.exe
