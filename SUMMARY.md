@@ -1,6 +1,7 @@
 - [ToughRADIUS 用户手册](toughradius/index.md)
   - [项目简介](toughradius/intro.md)
-  - [快速指南](toughradius/quickstart.md)
+  - [快速指南 V1版本](toughradius/quickstart.md)
+  - [快速指南 V2版本](toughradius_v2/quickstart.md)
   - [高级技巧](toughradius/advance.md)
     - [系统服务设置](toughradius/adv_systemd.md)
     - [服务端口映射](toughradius/adv_portmap.md)

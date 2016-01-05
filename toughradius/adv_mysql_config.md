@@ -10,7 +10,7 @@ ToughRADIUS默认采用了SqLite存储数据，通常这足够运营上千的用
 -  创建一个Mysql容器实例并自动创建一个数据库
 
 	$ mkdir -p /home/var/lib/mysql  #创建一个文件夹来存放mysql数据文件
-	$ docker run --name mysql -d -p 3306:3306 \
+	$ docker run --name mysql -d --privileged -p 3306:3306 \
 		-v /home/var/lib/mysql:/var/lib/mysql \
 		-e MYSQL_USER=tradmin \
 		-e MYSQL_PASSWORD=trradiusd \
