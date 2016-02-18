@@ -24,7 +24,7 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 ### 下载Linux专用脚本工具
 
-	wget https://github.com/talkincode/ToughRADIUS/raw/master/trshell  -O /usr/local/bin/trshell
+	wget https://raw.githubusercontent.com/talkincode/ToughRADIUS/master/scripts/trshell  -O /usr/local/bin/trshell
 	chmod +x /usr/local/bin/trshell
 
 看看这个工具为我们提供了那些功能
@@ -33,19 +33,21 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 	Usage: /usr/local/bin/trshell [OPTIONS] instance
 	
-	docker_setup       install docker, docker-compose
-	pull               toughradius docker images pull
-	standalone         install toughradius with already exists mysql
-	with_mysql         install toughradius with new docker mysql instance
-	remove             uninstall toughradius and database
-	status             toughradius instance status
-	restart            toughradius instance restart
-	stop               toughradius instance stop
-	upgrade            toughradius instance upgrade
-	logs               toughradius instance logs
-	dsh                toughwlan instance bash term
-	
-	All other options are passed to the trshell program.
+    docker_setup                install docker, docker-compose
+    pull                        toughradius docker images pull
+    install                     install toughradius with already exists mysql
+    install_with_lmysql         install toughradius with local docker mysql instance
+    install_with_rmysql         install toughradius with remote mysql server
+    remove                      uninstall toughradius and database
+    config                      toughradius instance config edit
+    status                      toughradius instance status
+    restart                     toughradius instance restart
+    stop                        toughradius instance stop
+    upgrade                     toughradius instance upgrade
+    logs                        toughradius instance logs
+    dsh                         toughradius instance bash term
+
+    All other options are passed to the toughrad program.
 
 ### Docker环境安装
 
@@ -58,11 +60,25 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 > 注意，trshell创建容器指令需要交互式完成，请根据提示进行输入操作
 
-	trshell with_mysql t1     # t1表示实例名，可自定义
 
-以上指令会部署一个名称为t1的实例，同时为这个实例部署一个专用的MySQL数据库，如果已经有存在的MySQL数据库服务器，可使用以下指令创建一个独立的实例
+一键部署 TOUGHRADIUS，默认使用sqlite数据库
 
-	trshell standalone t1     ＃ t1表示实例名，可自定义
+
+    $ trshell install t1     # t1表示实例名，可自定义，如果服务器只有一个实例，可以为空
+
+
+一键部署TOUGHRADIUS, 连接已有的远程MySQL数据库
+
+
+    $ trshell install_with_rmysql t1     ＃ t1表示实例名，可自定义，如果服务器只有一个实例，可以为空
+
+
+一键部署TOUGHRADIUS, 创建一个本地MySQL实例并连接它。
+
+
+    $ trshell install_with_lmysql t1     ＃ t1表示实例名，可自定义，如果服务器只有一个实例，可以为空
+
+
 
 ### 应用管理
 
