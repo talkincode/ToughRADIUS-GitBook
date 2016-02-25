@@ -2,6 +2,7 @@
   - [项目简介](toughradius/intro.md)
   - [快速指南 (V1)](toughradius/quickstart.md)
   - [快速指南 (V2)(推荐)](toughradius_v2/quickstart.md)
+  - [API接口 (V2)(推荐)](toughradius_v2/api_docs.md)
   - [高级技巧](toughradius/advance.md)
     - [系统服务设置](toughradius/adv_systemd.md)
     - [服务端口映射](toughradius/adv_portmap.md)
