@@ -11,7 +11,7 @@
 
 ### 示例 
 
-GET /api/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name=api%20add&ip_addr=10.10.10.1&dns_name=&time_type=0&vendor_id=0&portal_vendor=huaweiv2&bas_secret=123456&coa_port=3799&ac_port=2000 HTTP/1.1
+  GET /api/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name=api%20add&ip_addr=10.10.10.1&dns_name=&time_type=0&vendor_id=0&portal_vendor=huaweiv2&bas_secret=123456&coa_port=3799&ac_port=2000 HTTP/1.1
 
 将所有参数的值进行排序相加得到排序的参数值字符串，为了安全，可以增加一个随机参数值，比如nonce=123131414,保证nonce每次都不同，nonce的值参与签名计算。
 
@@ -53,8 +53,8 @@ GET /api/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name
 
 ### 请求URL
 
-- ` http://server:port/api/nas/fetch `
-      
+- ` http://server:port/api/product/query `
+    
 ### 请求方式
 
 - POST 
@@ -69,31 +69,31 @@ GET /api/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name
 
 **返回示例：**
 
-    {
-      "code": 0,
-      "msg": "success",
-      "products": [
-         {
-           "id": 1,
-           "product_name": "测试2M包月20元",
-           "product_policy": 0,
-           "product_status": 0,
-           "bind_mac": 0,
-           "bind_vlan": 0,
-           "concur_number": 0,
-           "fee_months": 0,
-           "fee_times": 0,
-           "fee_flows": 0,
-           "fee_price": 2000,
-           "input_max_limit": 1048576,
-           "output_max_limit": 2097152,
-           "create_time": "2016-02-20 17:59:09",
-           "update_time": "2016-02-20 17:59:09"
-         }
-      ],
-      "nonce": "1456369956",
-      "sign": "AD1E70D8CEB98D4F6DDE193E7860F587"
-    }
+  {
+    "code": 0,
+    "msg": "success",
+    "products": [
+       {
+         "id": 1,
+         "product_name": "测试2M包月20元",
+         "product_policy": 0,
+         "product_status": 0,
+         "bind_mac": 0,
+         "bind_vlan": 0,
+         "concur_number": 0,
+         "fee_months": 0,
+         "fee_times": 0,
+         "fee_flows": 0,
+         "fee_price": 2000,
+         "input_max_limit": 1048576,
+         "output_max_limit": 2097152,
+         "create_time": "2016-02-20 17:59:09",
+         "update_time": "2016-02-20 17:59:09"
+       }
+    ],
+    "nonce": "1456369956",
+    "sign": "AD1E70D8CEB98D4F6DDE193E7860F587"
+  }
 
 **返回结果描述：**
 
@@ -102,3 +102,18 @@ GET /api/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name
 - products：产品套餐列表，如果参数product_id不为空，则返回指定套餐，若套餐不存在，返回空。
 - nonce：随机时间戳
 - sign：消息签名
+
+## 区域节点查询
+
+
+### 接口描述
+
+- 查询系统区域节点
+
+### 请求URL
+
+- ` http://server:port/api/node/query `
+    
+### 请求方式
+
+- POST 
