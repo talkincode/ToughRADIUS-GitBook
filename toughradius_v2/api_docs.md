@@ -25,8 +25,8 @@
 
     请参考：https://github.com/talkincode/toughlib/blob/master/toughlib/apiutils.py
 
-    !/usr/bin/env python
-    coding:utf-8 
+    #!/usr/bin/env python
+    #coding:utf-8 
     import logging
     from hashlib import md5
 
