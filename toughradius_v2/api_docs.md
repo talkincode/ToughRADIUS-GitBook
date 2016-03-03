@@ -29,7 +29,7 @@
     coding:utf-8 
     import logging
     from hashlib import md5
-    
+
     def make_sign(api_secret, params=[]):
         """
             >>> make_sign("123456",[1,'2',u'中文'])
