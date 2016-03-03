@@ -41,8 +41,7 @@
         strs = ''.join(_params)
         mds = md5(strs.encode('utf-8')).hexdigest()
         return mds.upper()
-    
-    
+
     def check_sign(api_secret, msg):
         """
             >>>  check_sign("123456",dict(code=1,s='2',msg=u'中文',sign='33C9065427EECA3490C5642C99165145'))
