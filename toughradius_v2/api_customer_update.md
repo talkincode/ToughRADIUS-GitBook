@@ -6,7 +6,7 @@
 
 ### 请求URL
 
-- ` http://server:port/v1/api/customer/update`
+- ` http://server:port/api/v1/customer/update`
       
 ### 请求方式
 

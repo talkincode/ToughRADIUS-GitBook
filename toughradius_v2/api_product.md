@@ -15,7 +15,7 @@
 
 示例：
 
-    GET /v1/api/product/query?sign=1BB40565D6C88276085719A5964BE3E0&product_id=1 HTTP/1.1
+    GET /api/v1/product/query?sign=1BB40565D6C88276085719A5964BE3E0&product_id=1 HTTP/1.1
 
 
 ### 参数

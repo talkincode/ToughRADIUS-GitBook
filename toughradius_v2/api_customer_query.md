@@ -11,11 +11,11 @@
       
 ### 请求方式
 
-- GET 或者 POST  
+- GET 或者 POST 
 
 示例：
 
-    /api/v1/customer/query?sign=F1670B9A51DD7AE9882B36D32C48C89F&account_number=test01&customer_name=test01
+    GET /api/v1/customer/query?sign=F1670B9A51DD7AE9882B36D32C48C89F&account_number=test01&customer_name=test01 HTTP/1.1
 
 ### 参数
 

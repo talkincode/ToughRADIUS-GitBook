@@ -10,4 +10,4 @@
       
 ### 请求方式
 
-- GET 或者 POST  
+- GET 或者 POST 
