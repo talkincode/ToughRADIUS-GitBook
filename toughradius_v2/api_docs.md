@@ -12,7 +12,7 @@
 
 ### 示例 
 
-    GET /v1/api/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name=api%20add&ip_addr=10.10.10.1&dns_name=&time_type=0&vendor_id=0&portal_vendor=huaweiv2&bas_secret=123456&coa_port=3799&ac_port=2000 HTTP/1.1
+    GET /api/v1/nas/add?sign=C5219018DC9A71232A88606E48554F50&isp_code=default&bas_name=api%20add&ip_addr=10.10.10.1&dns_name=&time_type=0&vendor_id=0&portal_vendor=huaweiv2&bas_secret=123456&coa_port=3799&ac_port=2000 HTTP/1.1
 
 将所有参数的值进行排序相加得到排序的参数值字符串，为了安全，可以增加一个随机参数值，比如nonce=123131414,保证nonce每次都不同，nonce的值参与签名计算。
 

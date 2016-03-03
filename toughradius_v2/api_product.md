@@ -7,7 +7,7 @@
 
 ### 请求URL
 
-- ` http://server:port/v1/api/product/query `
+- ` http://server:port/api/v1/product/query `
       
 ### 请求方式
 

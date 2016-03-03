@@ -6,7 +6,7 @@
 
 ### 请求URL
 
-- ` http://server:port/v1/api/account/delete`
+- ` http://server:port/api/v1/account/delete`
       
 ### 请求方式
 
