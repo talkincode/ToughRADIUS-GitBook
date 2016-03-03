@@ -68,7 +68,7 @@
             // node query (GET )
 
             try {
-
+            
                 // Create request
                 Content content = Request.Get("http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1")
 
@@ -87,7 +87,6 @@
 - php
 
     <?php
-
     // Get cURL resource
     $ch = curl_init();
 
