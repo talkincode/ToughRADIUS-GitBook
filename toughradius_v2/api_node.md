@@ -54,6 +54,7 @@
 
 - java
 
+
         import java.io.IOException;
         import org.apache.http.client.fluent.*;
         public class SendRequest
@@ -77,7 +78,9 @@
             }
         }
 
+
 - php
+
 
         <?php
         // Get cURL resource
@@ -100,7 +103,9 @@
         curl_close($ch);
 
 
+
 - python
+
 
         import requests
         def send_request():
@@ -121,7 +126,9 @@
             except requests.exceptions.RequestException:
                 print('HTTP Request failed')
 
+
 - go
+
 
         package main
         import (
@@ -151,5 +158,6 @@
             fmt.Println("response Headers : ", resp.Header)
             fmt.Println("response Body : ", string(respBody))
         }
+
 
 
