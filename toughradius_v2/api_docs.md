@@ -26,12 +26,12 @@
     请参考：https://github.com/talkincode/toughlib/blob/master/toughlib/apiutils.py
 
 
-        #!/usr/bin/env python
-        #coding:utf-8 
+        `#!/usr/bin/env python`
+        `#coding:utf-8`
         import logging
         from hashlib import md5
 
-        def make_sign(api_secret, params=[]):
+        `def make_sign(api_secret, params=[]):`
             """
                 >>> make_sign("123456",[1,'2',u'中文'])
                 '33C9065427EECA3490C5642C99165145'
@@ -43,7 +43,7 @@
             mds = md5(strs.encode('utf-8')).hexdigest()
             return mds.upper()
 
-        def check_sign(api_secret, msg):
+        `def check_sign(api_secret, msg):`
             """
                 >>>  check_sign("123456",dict(code=1,s='2',msg=u'中文',sign='33C9065427EECA3490C5642C99165145'))
                 True
