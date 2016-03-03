@@ -54,102 +54,102 @@
 
 - java
 
-    import java.io.IOException;
-    import org.apache.http.client.fluent.*;
-    public class SendRequest
-    {
-        public static void main(String[] args) {
-            sendRequest();
-        }
-        private static void sendRequest() {
-            // node query (GET )
-            try {
-                // Create request
-                Content content = Request.Get("http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1")
-                // Fetch request and return content
-                .execute().returnContent();
-                // Print content
-                System.out.println(content);
+        import java.io.IOException;
+        import org.apache.http.client.fluent.*;
+        public class SendRequest
+        {
+            public static void main(String[] args) {
+                sendRequest();
             }
-            catch (IOException e) {
-                System.out.println(e); 
+            private static void sendRequest() {
+                // node query (GET )
+                try {
+                    // Create request
+                    Content content = Request.Get("http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1")
+                    // Fetch request and return content
+                    .execute().returnContent();
+                    // Print content
+                    System.out.println(content);
+                }
+                catch (IOException e) {
+                    System.out.println(e); 
+                }
             }
         }
-    }
 
 - php
 
-    <?php
-    // Get cURL resource
-    $ch = curl_init();
-    // Set url
-    curl_setopt($ch, CURLOPT_URL, 'http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1');
-    // Set method
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-    // Set options
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    // Send the request & save response to $resp
-    $resp = curl_exec($ch);
-    if(!$resp) {
-      die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
-    } else {
-      echo "Response HTTP Status Code : " . curl_getinfo($ch, CURLINFO_HTTP_CODE);
-      echo "\nResponse HTTP Body : " . $resp;
-    }
-    // Close request to clear up some resources
-    curl_close($ch);
+        <?php
+        // Get cURL resource
+        $ch = curl_init();
+        // Set url
+        curl_setopt($ch, CURLOPT_URL, 'http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1');
+        // Set method
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+        // Set options
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // Send the request & save response to $resp
+        $resp = curl_exec($ch);
+        if(!$resp) {
+          die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
+        } else {
+          echo "Response HTTP Status Code : " . curl_getinfo($ch, CURLINFO_HTTP_CODE);
+          echo "\nResponse HTTP Body : " . $resp;
+        }
+        // Close request to clear up some resources
+        curl_close($ch);
 
 
 - python
 
-    import requests
-    def send_request():
-        # node query
-        # GET http://127.0.0.1:1816/api/v1/node/query
-        try:
-            response = requests.get(
-                url="http://127.0.0.1:1816/api/v1/node/query",
-                params={
-                    "sign": "1BB40565D6C88276085719A5964BE3E0",
-                    "node_id": "1",
-                },
-            )
-            print('Response HTTP Status Code: {status_code}'.format(
-                status_code=response.status_code))
-            print('Response HTTP Response Body: {content}'.format(
-                content=response.content))
-        except requests.exceptions.RequestException:
-            print('HTTP Request failed')
+        import requests
+        def send_request():
+            # node query
+            # GET http://127.0.0.1:1816/api/v1/node/query
+            try:
+                response = requests.get(
+                    url="http://127.0.0.1:1816/api/v1/node/query",
+                    params={
+                        "sign": "1BB40565D6C88276085719A5964BE3E0",
+                        "node_id": "1",
+                    },
+                )
+                print('Response HTTP Status Code: {status_code}'.format(
+                    status_code=response.status_code))
+                print('Response HTTP Response Body: {content}'.format(
+                    content=response.content))
+            except requests.exceptions.RequestException:
+                print('HTTP Request failed')
 
 - go
 
-    package main
-    import (
-        "fmt"
-        "io/ioutil"
-        "net/http"
-    )
-    func sendNodeQuery() {
-        // node query (GET http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1)
-        // Create client
-        client := &http.Client{}
-        // Create request
-        req, err := http.NewRequest("GET", "http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1", nil)
-        parseFormErr := req.ParseForm()
-        if parseFormErr != nil {
-            fmt.Println(parseFormErr)
+        package main
+        import (
+            "fmt"
+            "io/ioutil"
+            "net/http"
+        )
+        func sendNodeQuery() {
+            // node query (GET http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1)
+            // Create client
+            client := &http.Client{}
+            // Create request
+            req, err := http.NewRequest("GET", "http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1", nil)
+            parseFormErr := req.ParseForm()
+            if parseFormErr != nil {
+                fmt.Println(parseFormErr)
+            }
+            // Fetch Request
+            resp, err := client.Do(req)
+            if err != nil {
+                fmt.Println("Failure : ", err)
+            }
+            // Read Response Body
+            respBody, _ := ioutil.ReadAll(resp.Body)
+            // Display Results
+            fmt.Println("response Status : ", resp.Status)
+            fmt.Println("response Headers : ", resp.Header)
+            fmt.Println("response Body : ", string(respBody))
         }
-        // Fetch Request
-        resp, err := client.Do(req)
-        if err != nil {
-            fmt.Println("Failure : ", err)
-        }
-        // Read Response Body
-        respBody, _ := ioutil.ReadAll(resp.Body)
-        // Display Results
-        fmt.Println("response Status : ", resp.Status)
-        fmt.Println("response Headers : ", resp.Header)
-        fmt.Println("response Body : ", string(respBody))
-    }
 
 
