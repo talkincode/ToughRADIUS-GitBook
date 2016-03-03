@@ -59,27 +59,29 @@
 
     public class SendRequest
     {
-      public static void main(String[] args) {
-      sendRequest();
-      }
-      
-      private static void sendRequest() {
-      
-      // node query (GET )
-      
-      try {
-        
-        // Create request
-        Content content = Request.Get("http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1")
-        
-        // Fetch request and return content
-        .execute().returnContent();
-        
-        // Print content
-        System.out.println(content);
-      }
-      catch (IOException e) { System.out.println(e); }
-      }
+        public static void main(String[] args) {
+            sendRequest();
+        }
+
+        private static void sendRequest() {
+
+            // node query (GET )
+
+            try {
+
+                // Create request
+                Content content = Request.Get("http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1")
+
+                // Fetch request and return content
+                .execute().returnContent();
+
+                // Print content
+                System.out.println(content);
+            }
+            catch (IOException e) {
+                System.out.println(e); 
+            }
+        }
     }
 
 - php
@@ -97,8 +99,6 @@
 
     // Set options
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-
 
     // Send the request & save response to $resp
     $resp = curl_exec($ch);
@@ -118,9 +118,7 @@
 
     # Install the Python Requests library:
     # `pip install requests`
-
     import requests
-
 
     def send_request():
         # node query
@@ -146,39 +144,38 @@
     package main
 
     import (
-      "fmt"
-      "io/ioutil"
-      "net/http"
+        "fmt"
+        "io/ioutil"
+        "net/http"
     )
 
     func sendNodeQuery() {
-      // node query (GET http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1)
+        // node query (GET http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1)
+        // Create client
+        client := &http.Client{}
 
-      // Create client
-      client := &http.Client{}
+        // Create request
+        req, err := http.NewRequest("GET", "http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1", nil)
 
-      // Create request
-      req, err := http.NewRequest("GET", "http://127.0.0.1:1816/api/v1/node/query?sign=1BB40565D6C88276085719A5964BE3E0&node_id=1", nil)
+        parseFormErr := req.ParseForm()
+        if parseFormErr != nil {
+            fmt.Println(parseFormErr)
+        }
 
-      parseFormErr := req.ParseForm()
-      if parseFormErr != nil {
-        fmt.Println(parseFormErr)    
-      }
+        // Fetch Request
+        resp, err := client.Do(req)
 
-      // Fetch Request
-      resp, err := client.Do(req)
-      
-      if err != nil {
-        fmt.Println("Failure : ", err)
-      }
+        if err != nil {
+            fmt.Println("Failure : ", err)
+        }
 
-      // Read Response Body
-      respBody, _ := ioutil.ReadAll(resp.Body)
+        // Read Response Body
+        respBody, _ := ioutil.ReadAll(resp.Body)
 
-      // Display Results
-      fmt.Println("response Status : ", resp.Status)
-      fmt.Println("response Headers : ", resp.Header)
-      fmt.Println("response Body : ", string(respBody))
+        // Display Results
+        fmt.Println("response Status : ", resp.Status)
+        fmt.Println("response Headers : ", resp.Header)
+        fmt.Println("response Body : ", string(respBody))
     }
 
 
