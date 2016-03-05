@@ -44,8 +44,10 @@ TOUGHRADIUS提供了RADIUS核心服务引擎与Web管理控制台，以及可扩
 - 支持到期提前通知，通过邮件和webhook触发实现。
 - 详细的操作日志记录，条件查询。
 
+## 系统架构
+
 ![][image-1]
 
 
 
-[image-1]:	../imgs/toughcloud_struct.png
+[image-1]:	../imgs/trv2_struct.png

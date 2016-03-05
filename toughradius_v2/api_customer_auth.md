@@ -6,8 +6,8 @@
 
 ### 请求URL
 
-- ` http://server:port/v1/api/customer/auth`
+- ` http://server:port/api/v1/customer/auth`
       
 ### 请求方式
 
-- POST 
+- GET 或者 POST  
