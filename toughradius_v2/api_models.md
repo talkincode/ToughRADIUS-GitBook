@@ -1,5 +1,18 @@
 ## 数据结构定义
 
+### BAS设备
+
+|属性                    |类型（长度）       |可否为空           |描述                        |
+|-----------------------|:-----------------|:----------------:|--------------------------:|
+|id                     |INTEGER           |False             |设备id                      |
+|dns_name               |VARCHAR(128)      |True              |DNS名称                     |
+|vendor_id              |VARCHAR(32)       |False             |厂商标识                  |
+|ip_addr                |VARCHAR(15)       |True              |IP地址                      |
+|bas_name               |VARCHAR(64)       |False             |bas名称                     |
+|bas_secret             |VARCHAR(64)       |False             |共享密钥                  |
+|coa_port               |INTEGER           |False             |CoA端口                     |
+|time_type              |SMALLINT          |False             |时区类型                  |
+
 ### 资费套餐
 
 - 资费类型 product_policy 0 预付费包月 1 预付费时长 2 买断包月 3 买断时长 4 预付费流量 5 买断流量
