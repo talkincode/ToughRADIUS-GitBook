@@ -29,7 +29,7 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
 直接输入 tmshell 可以看到支持的指令操作
 
     usage: tmshell [OPTIONS] instance
-    
+
         docker_setup                install docker, docker-compose
         pull                        mysql docker images pull
         install                     install default mysql instance
@@ -44,7 +44,7 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
         upmaster                    mysql instance update master sync config
         backup                      mysql instance backup database
         dsh                         mysql instance bash term
-    
+
     All other options are passed to the tmshell program.
 
 ### 完整的安装过程
@@ -68,9 +68,9 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
     mysql server id [1,2](default none): 1
     # mysql服务使用的最大内存
     mysql max memary [512M,1G,4G](default none):
-    
+
     ToughMySQL instance config:
-    
+
     instance name: mysql
     mysql_user: raduser
     mysql_password: radpwd
@@ -80,8 +80,8 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
     mysql_port: 3306
     serverid: 1
     mysql_max_mem:
-    
-    
+
+
     database:
         container_name: db_mysql
         image: "index.alauda.cn/toughstruct/mysql"
@@ -105,7 +105,7 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
         volumes:
             /home/toughrun/mysql/dbmysql:/var/lib/mysql
             /home/toughrun/mysql/backup:/var/backup
-    
+
     Creating db_mysql
       Name          Command         State           Ports
     ----------------------------------------------------------
