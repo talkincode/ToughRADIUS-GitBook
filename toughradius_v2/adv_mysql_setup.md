@@ -28,6 +28,7 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
 
 直接输入 tmshell 可以看到支持的指令操作
 
+~~~sh
     usage: tmshell [OPTIONS] instance
 
         docker_setup                install docker, docker-compose
@@ -46,6 +47,7 @@ tmshell是一个自动化安装和管理脚本，通过这个脚本，提供了�
         dsh                         mysql instance bash term
 
     All other options are passed to the tmshell program.
+~~~
 
 ### 完整的安装过程
 

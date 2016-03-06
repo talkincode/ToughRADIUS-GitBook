@@ -35,38 +35,38 @@
 
     请参考：https://github.com/talkincode/toughlib/blob/master/toughlib/apiutils.py
 
+~~~python
+#!/usr/bin/env python`
+#coding:utf-8`
+import logging
+from hashlib import md5
 
-        #!/usr/bin/env python`
-        #coding:utf-8`
-        import logging
-        from hashlib import md5
+def make_sign(api_secret, params=[]):
+    """
+        >>> make_sign("123456",[1,'2',u'中文'])
+        '33C9065427EECA3490C5642C99165145'
+    """
+    _params = [p for p in params if p is not None]
+    _params.sort()
+    _params.insert(0, api_secret)
+    strs = ''.join(_params)
+    mds = md5(strs.encode('utf-8')).hexdigest()
+    return mds.upper()
 
-        def make_sign(api_secret, params=[]):
-            """
-                >>> make_sign("123456",[1,'2',u'中文'])
-                '33C9065427EECA3490C5642C99165145'
-            """
-            _params = [p for p in params if p is not None]
-            _params.sort()
-            _params.insert(0, api_secret)
-            strs = ''.join(_params)
-            mds = md5(strs.encode('utf-8')).hexdigest()
-            return mds.upper()
+def check_sign(api_secret, msg):
+    """
+        >>>  check_sign("123456",dict(code=1,s='2',msg=u'中文',sign='33C9065427EECA3490C5642C99165145'))
+        True
+    """
+    if "sign" not in msg:
+        return False
+    sign = msg['sign']
+    params = [msg[k].encode('utf-8') for k in msg if k != 'sign']
+    local_sign = make_sign(api_secret, params)
+    result = (sign == local_sign)
+    if not result:
+        logging.error("check_sign failure, sign:%s != local_sign:%s" %(sign,local_sign))
 
-        def check_sign(api_secret, msg):
-            """
-                >>>  check_sign("123456",dict(code=1,s='2',msg=u'中文',sign='33C9065427EECA3490C5642C99165145'))
-                True
-            """
-            if "sign" not in msg:
-                return False
-            sign = msg['sign']
-            params = [msg[k].encode('utf-8') for k in msg if k != 'sign']
-            local_sign = make_sign(api_secret, params)
-            result = (sign == local_sign)
-            if not result:
-                logging.error("check_sign failure, sign:%s != local_sign:%s" %(sign,local_sign))
-
-            return result
-
+    return result
+~~~
 

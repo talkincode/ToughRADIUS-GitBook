@@ -27,12 +27,14 @@
 
 **返回示例：**
 
-    {
-      "code": 0,
-      "msg": "success",
-      "nonce": "1456974137",
-      "sign": "E65A4352B6DAD0576EBAD28AFCFCAA35"
-    }
+~~~json
+{
+  "code": 0,
+  "msg": "success",
+  "nonce": "1456974137",
+  "sign": "E65A4352B6DAD0576EBAD28AFCFCAA35"
+}
+~~~
 
 **返回结果描述：**
 

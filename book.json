@@ -5,14 +5,16 @@
     "description": null,
     "isbn": null,
     "extension": null,
-    "plugins": [],
+    "plugins": [
+        "prism",
+        "-highlight",
+        "github"
+    ],
     "pluginsConfig": {
-        "fontSettings": {
-            "theme": "white",
-            "family": "sans",
-            "size": 1
+        "github": {
+            "url": "https://github.com/talkincode/ToughRADIUS"
         }
-    },
+        },
     "variables": {},
     "links": {
         "sidebar": {
