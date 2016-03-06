@@ -7,6 +7,8 @@
     - [返回结果码定义](toughradius_v2/api_status_code.md)
     - [区域信息管理](toughradius_v2/api_node.md)
       - [区域节点查询](toughradius_v2/api_node_query.md)
+    - [NAS接入设备管理](toughradius_v2/api_nas.md)
+      - [新增NAS接入设备](toughradius_v2/api_nas_add.md)
     - [资费套餐管理](toughradius_v2/api_product.md)
       - [资费套餐查询](toughradius_v2/api_product_query.md)
     - [客户管理](toughradius_v2/api_customer.md)
