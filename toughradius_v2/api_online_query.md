@@ -74,6 +74,6 @@
 
 - code：返回结果码
 - msg：返回消息
-- onlines：客户所有在线的上网账号。
+- onlines：在线用户信息。
 - nonce：随机时间戳
 - sign：消息签名
