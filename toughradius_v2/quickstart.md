@@ -2,7 +2,7 @@
 
 ## 准备
 
-一台完整的服务器，或者远程VPS，给服务器安装Linux系统，CentOS6以上，ubuntu13以上，或者其他你自己熟悉的Linux发行版。
+一台完整的服务器，或者远程VPS，给服务器安装Linux系统，CentOS6以上，ubuntu14以上，或者其他你自己熟悉的Linux发行版。
 
 你要懂一点技术，比如安装操作系统，会在终端敲命令。
 
@@ -22,61 +22,67 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 > 通常我们把封装了软件应用的“Docker集装箱”叫做镜像，有点类似你可能了解的ISO文件。
 
-### 下载Linux专用脚本工具
+### 使用 toughcli 专用安装配置工具
 
-	wget https://raw.githubusercontent.com/talkincode/ToughRADIUS/master/scripts/trshell  -O /usr/local/bin/trshell
-	chmod +x /usr/local/bin/trshell
+	pip install toughcli 或者  easy_install toughcli
 
 看看这个工具为我们提供了那些功能
 
-	trshell help
+	$ toughcli --help
+    Usage: toughcli [OPTIONS] COMMAND [ARGS]...
 
-	Usage: /usr/local/bin/trshell [OPTIONS] instance
-	
-    docker_setup                install docker, docker-compose
-    pull                        toughradius docker images pull
-    install                     install toughradius with already exists mysql
-    install_with_lmysql         install toughradius with local docker mysql instance
-    install_with_rmysql         install toughradius with remote mysql server
-    remove                      uninstall toughradius and database
-    config                      toughradius instance config edit
-    status                      toughradius instance status
-    restart                     toughradius instance restart
-    stop                        toughradius instance stop
-    upgrade                     toughradius instance upgrade
-    logs                        toughradius instance logs
-    dsh                         toughradius instance bash term
+    Options:
+    --version
+    --server-info
+    --help         Show this message and exit.
 
-    All other options are passed to the toughrad program.
+    Commands:
+    docker
+    mysql
+    radius
+    redis
+    upgrade
+    wlan
+
+查看子模块的指令帮助信息
+
+    $ toughcli radius --help
+    Usage: toughcli radius [OPTIONS]
+
+    Options:
+    --install
+    -e, --edit-config               edit radius docker-compose.yml config
+    -o, --docker-operate [|ps|config|pull|logs|start|stop|restart|kill|rm|down|pause|unpause|status]
+                                  docker instance operate
+    -d, --rundir TEXT               default:/home/toughrun
+    -i, --instance TEXT
+    -n, --worker-num INTEGER
+    -r, --release [dev|stable|commcial]
+    --help                          Show this message and exit.
+
 
 ### Docker环境安装
 
 我们首先应该安装配置服务器的Docker运行环境，以下指令会自动根据当前linux版本下载对应的docker版本进行自动安装。
 
-	trshell docker_setup
-
+	toughcli docker --install
 
 ### ToughRADIUS 应用实例创建
 
 > 注意，trshell创建容器指令需要交互式完成，请根据提示进行输入操作
 
-
 一键部署 TOUGHRADIUS，默认使用sqlite数据库
 
 
-    $ trshell install t1     # t1表示实例名，可自定义，如果服务器只有一个实例，可以为空
+    $ toughcli radius --install  
 
+指定实例名
 
-一键部署TOUGHRADIUS, 连接已有的远程MySQL数据库
+    $ toughcli radius --install  -i myradius 
 
+指定版本类型
 
-    $ trshell install_with_rmysql t1     ＃ t1表示实例名，可自定义，如果服务器只有一个实例，可以为空
-
-
-一键部署TOUGHRADIUS, 创建一个本地MySQL实例并连接它。
-
-
-    $ trshell install_with_lmysql t1     ＃ t1表示实例名，可自定义，如果服务器只有一个实例，可以为空
+    $ toughcli radius --install -r dev 
 
 
 
