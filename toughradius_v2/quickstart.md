@@ -24,7 +24,7 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 ### 使用 toughcli 专用安装配置工具
 
-	pip install toughcli 或者  easy_install toughcli
+	easy_install toughcli 或者 pip install toughcli   
 
 看看这个工具为我们提供了那些功能
 
@@ -33,7 +33,7 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
     Options:
     --version
-    --server-info
+    --info         Show Server info
     --help         Show this message and exit.
 
     Commands:
@@ -61,6 +61,19 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
     --help                          Show this message and exit.
 
 
+查看服务器信息：
+
+    $ toughcli --info
+    Linux distribution: CentOS Linux,7.2.1511,Core
+    Cli version toughcli: 0.0.7
+    Env_home: /root
+    Env_path: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin
+    Server platform: Linux-3.10.0-327.4.5.el7.x86_64-x86_64-with-centos-7.2.1511-Core,x86_64
+    Python version: CPython,2.7.5
+    Docker version 1.8.2-el7.centos, build a01dc02/1.8.2
+    docker-compose version 1.5.2, build 7240ff3
+
+
 ### Docker环境安装
 
 我们首先应该安装配置服务器的Docker运行环境，以下指令会自动根据当前linux版本下载对应的docker版本进行自动安装。
@@ -69,7 +82,7 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 ### ToughRADIUS 应用实例创建
 
-> 注意，trshell创建容器指令需要交互式完成，请根据提示进行输入操作
+> 注意，创建容器指令需要交互式完成，请根据提示进行输入操作
 
 一键部署 TOUGHRADIUS，默认使用sqlite数据库
 
