@@ -76,9 +76,34 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 ### Docker环境安装
 
-我们首先应该安装配置服务器的Docker运行环境，以下指令会自动根据当前linux版本下载对应的docker版本进行自动安装。
+我们首先应该安装配置服务器的Docker运行环境(Docker engine, Docker Compose)，toughcli提供了一个快速安装指令，以下指令会自动根据当前linux版本下载对应的docker版本进行自动安装。
 
 	toughcli docker --install
+
+####  Docker 自定义安装
+
+如果在 docker 安装过程中遇到问题，可以参考最原始最全面的 docker 安装指南。
+
+- [Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+- [Arch Linux](https://docs.docker.com/engine/installation/linux/archlinux/)
+- [CentOS](https://docs.docker.com/engine/installation/linux/centos/)
+- [CRUX Linux](https://docs.docker.com/engine/installation/linux/cruxlinux/)
+- [Debian](https://docs.docker.com/engine/installation/linux/debian/)
+- [Fedora](https://docs.docker.com/engine/installation/linux/fedora/)
+- [FrugalWare](https://docs.docker.com/engine/installation/linux/frugalware/)
+- [Gentoo](https://docs.docker.com/engine/installation/linux/gentoolinux/)
+- [Oracle Linux](https://docs.docker.com/engine/installation/linux/oracle/)
+- [Red Hat Enterprise Linux](https://docs.docker.com/engine/installation/linux/rhel/)
+- [openSUSE and SUSE Linux Enterprise](https://docs.docker.com/engine/installation/linux/SUSE/)
+
+遇到困难不要轻易放弃，你还可以尝试使用[二进制安装](https://docs.docker.com/engine/installation/binaries/)
+
+#### Docker Compose
+
+Docker Compose是在使用Docker容器部署分布式应用时的工具，可以定义哪个容器运行哪个应用。要使用 Docker Compose，Docker 版本必须在1.7+
+
+[官方安装文档](https://docs.docker.com/compose/install/)
+
 
 ### ToughRADIUS 应用实例创建
 
@@ -97,6 +122,11 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
     $ toughcli radius --install -r dev 
 
+
+> 注意： 默认使用的数据库是嵌入式 sqlite，如果你需要采用 mysql，请务必先安装 MySQL 数据库，如果没有安装 MySQL 数据库而在安装 ToughRADIUS 选择 mysql 类型，会导致无法使用系统，toughcli提供了一个MySQL Docker 实例的快速安装指令，以下指令进行自动安装。
+
+
+    toughcli mysql --install
 
 
 ### 应用管理
