@@ -12,7 +12,7 @@ toughcli 使用 python 开发，提供了一个可以在 linux终端下使用的
 
     $ easy_install toughcli 
 
-或者使用更强大的 pip 工具，pip 在Python 2.7.9以下版本需要手动安装。
+或者使用更强大的 pip 工具
 
     $ easy_install pip
 
