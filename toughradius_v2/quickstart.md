@@ -24,11 +24,15 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 ### 使用 toughcli 专用安装配置工具
 
-toughcli 是一个toughradius以及相关软件的工具包。使用 python 开发，通过 python 的包管理工具可以直接安装。
+toughcli 是一个toughradius以及相关软件的安装配置工具包。使用 python 开发，通过 python 的包管理工具可以直接安装。
+
+使用 Python 自带的 easy_install包管理工具安装
 
 	$ easy_install toughcli 
 
-或者 
+或者使用更强大的 pip 工具，pip 在Python 2.7.9以下版本需要手动安装。
+
+    $ easy_install pip
 
     $ pip install toughcli   
 
@@ -69,6 +73,8 @@ toughcli 是一个toughradius以及相关软件的工具包。使用 python 开�
 
 
 查看服务器信息：
+
+> 提示：如果你在安装过程中遇到困难，可以通过这个指令反馈一些有用的信息。
 
     $ toughcli --info
     Linux distribution: CentOS Linux,7.2.1511,Core
