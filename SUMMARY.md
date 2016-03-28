@@ -4,8 +4,6 @@
   - [快速指南 (V2)(推荐)](toughradius_v2/quickstart.md)
   - [toughcli 使用参考](toughcli/intro.md)
     - [docker 安装](toughcli/docker.md)
-    - [](toughcli/intro.md)
-    - [](toughcli/intro.md)
   - [API接口 (V2)(推荐)](toughradius_v2/api_docs.md)
     - [数据结构定义](toughradius_v2/api_models.md)
     - [返回结果码定义](toughradius_v2/api_status_code.md)
