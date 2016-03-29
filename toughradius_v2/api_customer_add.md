@@ -14,7 +14,7 @@
 
 示例：
 
-    GET /api/v1/customer/add?sign=880E93FA8FA22273F24DE5C0F2BE779D&account_number=test03&customer_name=test03&node_id=1&realname=test03&idcard=123&email=222%40qqq.com&mobile=133454646&address=12313&begin_date=2016-02-10&expire_date=2017-02-10&product_id=1&time_length=0&flow_length=0&balance=0&password=888888 HTTP/1.1
+    GET /api/v1/customer/add?sign=BBA8AC0DE2D11DE29925E6039764131D&account_number=userp2&customer_name=userp2&node_id=1&realname=userp2&idcard=000000&email=000000%40qq.com&mobile=000000&address=address&begin_date=2016-02-10&expire_date=2017-02-10&product_id=3&time_length=0&flow_length=0&balance=0&password=888888&fee_value=0.00 HTTP/1.1
 
 ### 参数
 
@@ -33,6 +33,7 @@
 | begin_date | 否 | string |开通日期 |
 | expire_date | 否 | string |过期日期 |
 | balance | 是 | int |用户余额 |
+| fee_value | 是 | int |用户缴费金额 |
 | time_length | 是 | int |用户时长 |
 | flow_length | 是 | int |用户流量 |
 
