@@ -3,18 +3,22 @@
 查看radius指令模块的帮助信息
 
     $ toughcli radius --help
+
     Usage: toughcli radius [OPTIONS]
 
+        install toughradius by docker mode
+
     Options:
-    --install
-    -e, --edit-config               edit radius docker-compose.yml config
-    -o, --docker-operate [|ps|config|pull|logs|start|stop|restart|kill|rm|down|pause|unpause|status]
-                                  docker instance operate
-    -d, --rundir TEXT               default:/home/toughrun
-    -i, --instance TEXT
-    -n, --worker-num INTEGER
-    -r, --release [dev|stable|commcial]
-    --help                          Show this message and exit.
+
+        --install
+        -e, --edit-config               edit radius docker-compose.yml config
+        -o, --docker-operate [|ps|config|pull|logs|start|stop|restart|kill|rm|down|pause|unpause|status|upgrade]
+                                      docker instance operate
+        -d, --rundir TEXT               default:/home/toughrun
+        -i, --instance TEXT
+        -n, --worker-num INTEGER
+        -r, --release [dev|stable|commcial]
+        --help                          Show this message and exit.
 
 
 ### 参数说明：
@@ -46,7 +50,11 @@
 
     $ toughcli radius --install -r dev 
 
+### 本地安装模式
 
+该安装模式不依赖 Docker，即采用了非 Docker 模式的部署，不建议新手使用，由于可能存在的 linux 发行版以及安装环境的差异，在安装过程中可能会出现不可预期的问题。任何用户都可以将安装过程中的问题向我们反馈，但我们不能承诺随时随地的解答。
+
+    $ toughcli native_radius --install
 
 
 

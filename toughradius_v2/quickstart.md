@@ -10,7 +10,7 @@
 
 ToughRADIUS 是Docker技术的拥抱者，如果想更好的使用ToughRADIUS，你也需要去学习关于Docker的知识。
 
-## 安装部署
+## 关于 Docker 安装模式
 
 ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基础是ubuntu 14。
 
@@ -24,98 +24,22 @@ ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基�
 
 ### 使用 toughcli 专用安装配置工具
 
-toughcli 是一个toughradius以及相关软件的安装配置工具包。使用 python 开发，通过 python 的包管理工具可以直接安装。
-
-使用 Python 自带的 easy_install包管理工具安装
+toughcli 是一个toughradius以及相关软件的安装配置命令行接口 (Command Line Interface)。在 linux 下可以通过以下指令快速安装
 
 	$ easy_install toughcli 
 
-或者使用更强大的 pip 工具，pip 在Python 2.7.9以下版本需要手动安装。
-
-    $ easy_install pip
-
-    $ pip install toughcli   
-
-
-看看这个工具为我们提供了那些功能
-
-	$ toughcli --help
-    Usage: toughcli [OPTIONS] COMMAND [ARGS]...
-
-    Options:
-    --version
-    --info         Show Server info
-    --help         Show this message and exit.
-
-    Commands:
-    docker
-    mysql
-    radius
-    redis
-    upgrade
-    wlan
-
-查看子模块的指令帮助信息
-
-    $ toughcli radius --help
-    Usage: toughcli radius [OPTIONS]
-
-    Options:
-    --install
-    -e, --edit-config               edit radius docker-compose.yml config
-    -o, --docker-operate [|ps|config|pull|logs|start|stop|restart|kill|rm|down|pause|unpause|status]
-                                  docker instance operate
-    -d, --rundir TEXT               default:/home/toughrun
-    -i, --instance TEXT
-    -n, --worker-num INTEGER
-    -r, --release [dev|stable|commcial]
-    --help                          Show this message and exit.
-
-
-查看服务器信息：
-
-> 提示：如果你在安装过程中遇到困难，可以通过这个指令反馈一些有用的信息。
-
-    $ toughcli --info
-    Linux distribution: CentOS Linux,7.2.1511,Core
-    Cli version toughcli: 0.0.7
-    Env_home: /root
-    Env_path: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin
-    Server platform: Linux-3.10.0-327.4.5.el7.x86_64-x86_64-with-centos-7.2.1511-Core,x86_64
-    Python version: CPython,2.7.5
-    Docker version 1.8.2-el7.centos, build a01dc02/1.8.2
-    docker-compose version 1.5.2, build 7240ff3
+> 关于 toughcli 的详细介绍，请参考《[toughcli使用参考](../toughcli/intro.md)》
 
 
 ### Docker环境安装
 
 我们首先应该安装配置服务器的Docker运行环境(Docker engine, Docker Compose)，toughcli提供了一个快速安装指令，以下指令会自动根据当前linux版本下载对应的docker版本进行自动安装。
 
-	toughcli docker --install
+	$ toughcli docker --install
 
-####  Docker 自定义安装
+![](../imgs/docker_install.gif)
 
-如果在 docker 安装过程中遇到问题，可以参考最原始最全面的 docker 安装指南。
-
-- [Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
-- [Arch Linux](https://docs.docker.com/engine/installation/linux/archlinux/)
-- [CentOS](https://docs.docker.com/engine/installation/linux/centos/)
-- [CRUX Linux](https://docs.docker.com/engine/installation/linux/cruxlinux/)
-- [Debian](https://docs.docker.com/engine/installation/linux/debian/)
-- [Fedora](https://docs.docker.com/engine/installation/linux/fedora/)
-- [FrugalWare](https://docs.docker.com/engine/installation/linux/frugalware/)
-- [Gentoo](https://docs.docker.com/engine/installation/linux/gentoolinux/)
-- [Oracle Linux](https://docs.docker.com/engine/installation/linux/oracle/)
-- [Red Hat Enterprise Linux](https://docs.docker.com/engine/installation/linux/rhel/)
-- [openSUSE and SUSE Linux Enterprise](https://docs.docker.com/engine/installation/linux/SUSE/)
-
-遇到困难不要轻易放弃，你还可以尝试使用[二进制安装](https://docs.docker.com/engine/installation/binaries/)
-
-#### Docker Compose
-
-Docker Compose是在使用Docker容器部署分布式应用时的工具，可以定义哪个容器运行哪个应用。要使用 Docker Compose，Docker 版本必须在1.7+
-
-[官方安装文档](https://docs.docker.com/compose/install/)
+> 如果安装遇到问题，请参考《[使用 toughcli 安装 Docker](../toughcli/docker.md)》
 
 
 ### ToughRADIUS 应用实例创建
@@ -126,6 +50,8 @@ Docker Compose是在使用Docker容器部署分布式应用时的工具，可以
 
 
     $ toughcli radius --install  
+
+![](../imgs/toughcli_radius_install.gif)
 
 指定实例名
 
@@ -141,6 +67,7 @@ Docker Compose是在使用Docker容器部署分布式应用时的工具，可以
 
     toughcli mysql --install
 
+![](../imgs/toughcli_mysql_install.gif)
 
 ### 应用管理
 
