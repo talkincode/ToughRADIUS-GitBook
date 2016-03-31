@@ -42,6 +42,8 @@
 
     $ toughcli radius --install  
 
+![](../imgs/toughcli_radius_install.gif)
+
 指定实例名
 
     $ toughcli radius --install  -i r1 
