@@ -56,6 +56,8 @@
 
     $ toughcli native_radius --install
 
+![](../imgs/toughcli_native_radius_install.gif)
+
 
 
 
