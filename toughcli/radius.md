@@ -58,7 +58,13 @@
 
 ![](../imgs/toughcli_native_radius_install.gif)
 
+完成上一步后，进入 /opt/toughradius 初始化数据库，并启动服务
 
+    $ cd /opt/toughradius 
+    $ make initdb
+    $ service toughradius start
+
+![](../imgs/toughcli_native_radius_install_2.gif)
 
 
 
