@@ -52,6 +52,23 @@
 
     $ toughcli radius --install -r dev 
 
+升级版本
+
+    $ toughcli radius -o upgrade
+
+启动服务
+
+    $ toughcli radius -o start
+
+停止服务
+
+    $ toughcli radius -o stop
+
+查看日志
+
+    $ toughcli radius -o logs
+
+
 ### 本地安装模式
 
 该安装模式不依赖 Docker，即采用了非 Docker 模式的部署，不建议新手使用，由于可能存在的 linux 发行版以及安装环境的差异，在安装过程中可能会出现不可预期的问题。任何用户都可以将安装过程中的问题向我们反馈，但我们不能承诺随时随地的解答。
@@ -68,11 +85,27 @@
 
 ![](../imgs/toughcli_native_radius_install_2.gif)
 
+#### 升级本地安装版本
 
+    $ toughcli native_radius --upgrade
 
+通常开发版本会更早的合并 bug 修复，可以增加参数来升级到最新开发板
 
+    $ toughcli native_radius --upgrade -r dev
 
+#### 服务进程管理
 
+启动
+
+    $ service toughradius start
+
+停止
+
+    $ service toughradius stop
+
+查看状态
+
+    $ service toughradius status
 
 
 
