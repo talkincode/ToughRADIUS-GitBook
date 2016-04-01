@@ -12,6 +12,10 @@
 
 访问我们的网站：http://www.toughstruct.com
 
+## 赞助我们
+
+![](imgs/toughradius_support.png "赞助开发者")
+
 ## ToughRADIUS 项目地址
 
 **Github 项目地址**：[https://github.com/talkincode/ToughRADIUS][1]
