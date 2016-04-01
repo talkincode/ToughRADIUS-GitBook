@@ -89,7 +89,7 @@
 
     $ toughcli native_radius --upgrade
 
-通常开发版本会更早的合并 bug 修复，可以增加参数来升级到最新开发板
+通常开发版本会更早的合并 bug 修复，可以增加参数来升级到最新开发版本
 
     $ toughcli native_radius --upgrade -r dev
 
