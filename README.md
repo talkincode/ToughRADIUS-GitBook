@@ -14,7 +14,10 @@
 
 ## 赞助我们
 
-![](imgs/toughradius_support.png "赞助开发者")
+支付宝赞助
+
+![](imgs/toughradius_support.png "赞助ToughRADIUS开发者")
+
 
 ## ToughRADIUS 项目地址
 
