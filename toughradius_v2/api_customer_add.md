@@ -32,10 +32,10 @@
 | password | 否 | string |用户密码 |
 | begin_date | 否 | string |开通日期 |
 | expire_date | 否 | string |过期日期 |
-| balance | 是 | int |用户余额 |
-| fee_value | 是 | int |用户缴费金额 |
-| time_length | 是 | int |用户时长 |
-| flow_length | 是 | int |用户流量 |
+| balance | 是 | string |用户余额:元 #.##|
+| fee_value | 是 | string |用户缴费金额:元 #.##|
+| time_length | 是 | int |用户时长:小时|
+| flow_length | 是 | int |用户流量:MB|
 
 
 ### 返回结果
