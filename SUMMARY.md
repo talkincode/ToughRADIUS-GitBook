@@ -26,6 +26,7 @@
     - [客户管理](toughradius_v2/api_customer.md)
       - [客户信息查询](toughradius_v2/api_customer_query.md)
       - [客户授权校验](toughradius_v2/api_customer_auth.md)
+      - [客户密码修改](toughradius_v2/api_account_password_udpate.md)
       - [客户新开户](toughradius_v2/api_customer_add.md)
       - [客户资料修改](toughradius_v2/api_customer_update.md)
       - [客户资料删除](toughradius_v2/api_customer_delete.md)
