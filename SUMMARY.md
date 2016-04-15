@@ -5,6 +5,7 @@
   - [安装配置进阶篇 (V2)](toughradius_v2/install_advanced.md)
   - [toughcli 使用参考](toughcli/intro.md)
     - [docker 安装](toughcli/docker.md)
+    - [mysql 安装管理](toughcli/mysql.md)
     - [radius 安装管理](toughcli/radius.md)
   - [API接口 (V2)(推荐)](toughradius_v2/api_docs.md)
     - [数据结构定义](toughradius_v2/api_models.md)
