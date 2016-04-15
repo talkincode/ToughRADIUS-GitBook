@@ -59,7 +59,9 @@ ToughRADIUS 提供的默认安装指令是针对 CentOS 系统的，如果你希
 
     $ wget https://github.com/talkincode/ToughRADIUS/archive/release-stable.zip -O /opt/release-stable.zip
 
-    $ unzip /opt/release-stable.zip
+    $ cd /opt
+
+    $ unzip release-stable.zip
 
     $ mv ToughRADIUS-release-stable /opt/toughradius
 
@@ -67,7 +69,9 @@ ToughRADIUS 提供的默认安装指令是针对 CentOS 系统的，如果你希
 
     $ wget https://github.com/talkincode/ToughRADIUS/archive/release-dev.zip -O /opt/release-dev.zip
 
-    $ unzip /opt/release-dev.zip
+    $ cd /opt
+    
+    $ unzip release-dev.zip
 
     $ mv ToughRADIUS-release-dev /opt/toughradius
 
