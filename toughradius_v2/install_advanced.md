@@ -86,11 +86,11 @@ ToughRADIUS 提供的默认安装指令是针对 CentOS 系统的，如果你希
 
     $ make all
 
-make all 指令会完成 ToughRADIUS 所有相关的系统依赖下载安装，相关的 python 模块安装，已经配置文件的安装。在 make all 的过程中，有可能会出现失败，比如网络超时，缺少系统其它依赖，这对你通常是一个挑战，在 linux 的世界，很多东西是无法一一预料的，这还需要你具备一定的专业能力。
+make all 指令会完成 ToughRADIUS 所有相关的系统依赖下载安装，相关的 python 模块安装，以及配置文件的安装。在 make all 的过程中，有可能会出现失败，比如网络超时，缺少系统其它依赖，这对你通常是一个挑战，在 linux 的世界，很多东西是无法一一预料的，这还需要你具备一定的解决问题的能力。
 
 ### 修改 ToughRADIUS 配置
 
-make all 完成后，会存在以下配置文静：
+make all 完成后，会存在以下配置文件：
 
     /etc/toughradius.json
 
