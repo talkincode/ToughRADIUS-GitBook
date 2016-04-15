@@ -15,7 +15,7 @@
 
 ## linux 系统的选择
 
-linux 的发行版世界实在是太多元化了，但万变不离其中，理论上 ToughRADIUS 是可以运行在大部分linux 系统上的。
+linux 的发行版世界实在是太多元化了，但万变不离其宗，理论上 ToughRADIUS 是可以运行在大部分linux 系统上的。
 
 ToughRADIUS 依赖 Python2.7+ 运行环境，如果系统已经内置，则省略了升级 python 这一步，如果系统依然是 python2.4或 python2.6的版本，则需要先独立安装 python2.7版本。
 
