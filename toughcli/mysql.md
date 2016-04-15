@@ -34,33 +34,33 @@
 
 ### 示例
 
-安装 MySQL docker 实例
+- 安装 MySQL docker 实例
 
     $ toughcli mysql --install  
 
 
-指定实例名
+- 指定实例名
 
     $ toughcli mysql --install  -i m1 
 
 
-升级版本
+- 升级版本
 
     $ toughcli mysql -o upgrade
 
-启动服务
+- 启动服务
 
     $ toughcli mysql -o start
 
-停止服务
+- 停止服务
 
     $ toughcli mysql -o stop
 
-查看日志
+- 查看日志
 
     $ toughcli mysql -o logs
 
-查看存在的数据库名称
+- 查看存在的数据库名称
 
     $ toughcli mysql -o  showdbs
 
@@ -71,7 +71,7 @@
     newdb
     performance_schema
 
-创建一个新的空数据库
+- 创建一个新的空数据库
 
     $ toughcli mysql -o  makedb
 
@@ -81,7 +81,7 @@
     mysql user password : newpwd
     mysql database : newdb
 
-备份数据库
+- 备份数据库
 
     $ toughcli mysql -o  backup
 
