@@ -2,6 +2,7 @@
   - [项目简介](toughradius/intro.md)
   - [快速指南 (V1)](toughradius/quickstart.md)
   - [快速指南 (V2)(推荐)](toughradius_v2/quickstart.md)
+  - [安装配置进阶篇 (V2)](toughradius_v2/install_advanced.md)
   - [toughcli 使用参考](toughcli/intro.md)
     - [docker 安装](toughcli/docker.md)
     - [radius 安装管理](toughcli/radius.md)
