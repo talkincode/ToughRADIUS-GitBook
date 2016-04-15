@@ -21,7 +21,7 @@ RouterOS 设备信息必须在 ToughRADIUS 系统中配置，不然所有认证�
 
 对于记账间隔，如果是包月类型套餐，记账间隔应该设置的长一点，可以有效减轻 radius 服务器负担，如果希望获取更多的记账数据，适当的调整需要的记账间隔时间。
 
-![](../imgs/ros_accounting)
+![](../imgs/ros_accounting.png)
 
 
 - RouterOS上的 pppoe 配置
