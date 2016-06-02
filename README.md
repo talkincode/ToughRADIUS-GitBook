@@ -8,7 +8,7 @@
 
 向我们发送邮件：support@toughstruct.com
 
-加入我们的QQ交流群组：464025428，247860313
+加入我们的QQ交流群组：247860313,487229323(开发)
 
 访问我们的网站：http://www.toughstruct.com
 
