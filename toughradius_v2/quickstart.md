@@ -1,82 +1,99 @@
 # ToughRADIUS快速指南
 
-## 准备
+### 安装环境
 
-一台完整的服务器，或者远程VPS，给服务器安装Linux系统，CentOS6以上，ubuntu14以上，或者其他你自己熟悉的Linux发行版。
+操作系统建议：centos6/7, ubuntu 14+,其他linux x64系统，推荐使用 centos7
 
-你要懂一点技术，比如安装操作系统，会在终端敲命令。
-
-![][image-1]
-
-ToughRADIUS 是Docker技术的拥抱者，如果想更好的使用ToughRADIUS，你也需要去学习关于Docker的知识。
-
-## 关于 Docker 安装模式
-
-ToughRADIUS主要采用了Docker镜像部署的模式，ToughRADIUS的镜像基础是ubuntu 14。
-
-> 我们可以把Docker看作一个软件集装箱，半世纪之前，集装箱发挥了巨大的力量，改变了整个运输产业，也改变了人们的生活。而Docker就类似这样一个集装箱工具，只不过他封装的是软件。
-
-> 还记得linux安装lamp的经历吗？现在可以对各种安装配置apache，php等繁琐的工作说再见了。
-
-> 我们把ToughRADIUS相关的配置，运行依赖环境等全部打包在一个“Docker集装箱”里，我们只需要在我们的服务器上简单的安装一个支持运行“Docker集装箱”的环境，那么我们不用去折腾各种运行环境搭建就能简单的让ToughRADIUS跑起来。
-
-> 通常我们把封装了软件应用的“Docker集装箱”叫做镜像，有点类似你可能了解的ISO文件。
-
-### 使用 toughcli 专用安装配置工具
-
-toughcli 是一个toughradius以及相关软件的安装配置命令行接口 (Command Line Interface)。在 linux 下可以通过以下指令快速安装
-
-	$ easy_install toughcli 
-
-> 关于 toughcli 的详细介绍，请参考《[toughcli使用参考](../toughcli/intro.md)》
+服务器配置建议: CPU：1核心(或以上)，内存：1G(或以上)，硬盘：50G(或以上)
 
 
-### Docker环境安装
+### 下载 ToughRADIUS 安装包
 
-我们首先应该安装配置服务器的Docker运行环境(Docker engine, Docker Compose)，toughcli提供了一个快速安装指令，以下指令会自动根据当前linux版本下载对应的docker版本进行自动安装。
+    cd /opt
+    wget http://download.toughradius.net/toughradius-stable-v2-linux-x64.tar.xz -O toughradius-v2-linux-x64.tar.xz
 
-	$ toughcli docker --install
+### 部署系统
 
-![](../imgs/docker_install.gif)
+    cd /opt
+    tar Jxvf toughradius-v2-linux-x64.tar.xz
 
-> 如果安装遇到问题，请参考《[使用 toughcli 安装 Docker](../toughcli/docker.md)》
+解压缩得到 /opt/toughradius 目录
+
+>> 注意： /opt/toughradius 是默认目录，如果要修改此目录，必须同时修改 Makefile 和 toughctl, toughradius.conf 文件中的对应路径。
+
+执行 make all 安装
+
+    cd /opt/toughradius 
+    make all
+
+首次使用还需初始化数据库，根据实际情况修改 /opt/toughradius/etc/toughradius.json 的数据库配置，默认采用 sqlite 数据库。
+
+    toughctl initdb
+
+#### mysql 配置案例
+
+如果你希望使用 mysql 数据库，请首先自己完成 mysql 的安装配置，并保证 mysql服务已经正常运行，同时创建一个空的数据库，创建一个专用的用户名和密码。
+
+mysql 示例：
+
+进入 mysql 终端管理:
+
+    mysql >  create database raddb DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+    mysql >  GRANT ALL ON raddb.* TO raduser@'%' IDENTIFIED BY 'radpwd' WITH GRANT OPTION;
+    mysql >  FLUSH PRIVILEGES;
+
+修改数据库配置部分,具体参数请根据实际填写。
+
+    "database": {
+        "backup_path": "/var/toughradius/data",
+        "dbtype": "mysql",
+        "dburl": "mysql://raduser:radpwd@127.0.0.1:3306/raddb?charset=utf8",
+        "echo": 0,
+        "pool_recycle": 300,
+        "pool_size": 60
+    }
 
 
-### ToughRADIUS 应用实例创建
+###  运行系统
 
-> 注意，创建容器指令需要交互式完成，请根据提示进行输入操作
+启动 Radius 服务
 
-一键部署 TOUGHRADIUS，默认使用sqlite数据库
+    toughctl daemon -s startup                     # 启动 Radius 服务进程，
+
+停止服务
+
+    toughctl daemon -s shutdown                    # 停止 Radius 服务进程
+
+查看状态
+
+    toughctl daemon -s status                      # 查看 Radius 服务进程运行状态
+
+重载配置
+
+    toughctl daemon -s reload                      # 修改配置文件后重新加载服务
+
+查看日志
+
+    toughctl daemon -s "tail -f manage"            # tail 模式查看管理控制台日志
+    toughctl daemon -s "tail -f worker:worker0"    # tail 模式查看 radius 认证记账日志
+    toughctl daemon -s "tail -f task"              # tail 模式查看定时任务日志
+
+> 注意，worker 进程可以配置多个, 进程名为 worker:worker0， worker:worker1 ...
+
+### 使用系统
+
+系统使用的端口可以在 /opt/toughradius/etc/toughradius.json 中修改
+
+默认端口如下：
+
+- 16370 默认 redis 服务端口，与 toughradius.json 配置相符合
+- 1816  默认管理控制台端口，可以通过http://服务器地址:1816 访问 
+- 1812  默认 Radius 认证端口，提供路由器接入设备访问
+- 1813  默认 Radius 记账端口，提供路由器接入设备访问
 
 
-    $ toughcli radius --install  
 
-![](../imgs/toughcli_radius_install.gif)
-
-指定实例名
-
-    $ toughcli radius --install  -i myradius 
-
-指定版本类型
-
-    $ toughcli radius --install -r dev 
-
-
-> 注意： 默认使用的数据库是嵌入式 sqlite，如果你需要采用 mysql，请务必先安装 MySQL 数据库，如果没有安装 MySQL 数据库而在安装 ToughRADIUS 选择 mysql 类型，会导致无法使用系统，toughcli提供了一个MySQL Docker 实例的快速安装指令，以下指令进行自动安装。
-
-
-    toughcli mysql --install
-
-![](../imgs/toughcli_mysql_install.gif)
-
-### 应用管理
-
-这样我们的服务就已经运行了。我们可以通过浏览器来访问我们的应用了。
-
-营业管理：http://ipaddr:1816   管理权限 admin/root
-
-
-#### 防火墙设置
+### 防火墙设置
 
 注意：如果访问不了web，可能是防火墙禁止了相关端口，如果不打算用内置防火墙，可以关闭防火墙。
 
@@ -85,7 +102,3 @@ toughcli 是一个toughradius以及相关软件的安装配置命令行接口 (C
 禁止firewall开机启动，防火墙就永久性关闭了。
 
 	systemctl disable firewalld.service
-
-
-
-[image-1]:	../imgs/docker.png

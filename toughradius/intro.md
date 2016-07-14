@@ -2,7 +2,7 @@
 
 [![](https://badge.imagelayers.io/talkincode/toughradius:v2.svg)](https://imagelayers.io/?images=talkincode/toughradius:v2 'Get your own badge on imagelayers.io')
 
-ToughRADIUS是一个开源的Radius服务软件，采用于AGPL许可协议发布，从创立之日起，他的宗旨就是服务于中小微ISP，让运营变得更简单。
+ToughRADIUS是一个开源的Radius服务软件，采用于 Apache License 2.0 许可协议发布，从创立之日起，他的宗旨就是服务于中小微ISP，让运营变得更简单。
 
 TOUGHRADIUS支持标准RADIUS协议（RFC 2865, RFC 2866），提供完整的AAA实现。支持灵活的策略管理，支持各种主流接入设备并轻松扩展，具备丰富的计费策略支持。
 

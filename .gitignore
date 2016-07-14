@@ -57,3 +57,5 @@ docs/_build/
 .Ulysses-Group.plist
 .UlyssesRoot
 .Markdown文档.Ulysses_Public_Filter
+.DS_Store
+.Ulysses-favorites.plist
