@@ -10,12 +10,12 @@
 ### 下载 ToughRADIUS 安装包
 
     cd /opt
-    wget http://download.toughradius.net/toughradius-stable-v2-linux-x64.tar.xz -O toughradius-v2-linux-x64.tar.xz
+    wget http://download.toughradius.net/toughradius-stable-linux-x64.tar.xz -O toughradius-linux-x64.tar.xz
 
 ### 部署系统
 
     cd /opt
-    tar Jxvf toughradius-v2-linux-x64.tar.xz
+    tar Jxvf toughradius-linux-x64.tar.xz
 
 解压缩得到 /opt/toughradius 目录
 
@@ -28,7 +28,7 @@
 
 首次使用还需初始化数据库，根据实际情况修改 /opt/toughradius/etc/toughradius.json 的数据库配置，默认采用 sqlite 数据库。
 
-    toughctl initdb
+    make initdb
 
 #### mysql 配置案例
 
@@ -38,8 +38,8 @@ mysql 示例：
 
 进入 mysql 终端管理:
 
-    mysql >  create database raddb DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-    mysql >  GRANT ALL ON raddb.* TO raduser@'%' IDENTIFIED BY 'radpwd' WITH GRANT OPTION;
+    mysql >  create database toughradius DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+    mysql >  GRANT ALL ON toughradius.* TO raduser@'%' IDENTIFIED BY 'radpwd' WITH GRANT OPTION;
     mysql >  FLUSH PRIVILEGES;
 
 修改数据库配置部分,具体参数请根据实际填写。
@@ -47,7 +47,7 @@ mysql 示例：
     "database": {
         "backup_path": "/var/toughradius/data",
         "dbtype": "mysql",
-        "dburl": "mysql://raduser:radpwd@127.0.0.1:3306/raddb?charset=utf8",
+        "dburl": "mysql://raduser:radpwd@127.0.0.1:3306/toughradius?charset=utf8",
         "echo": 0,
         "pool_recycle": 300,
         "pool_size": 60
@@ -58,27 +58,15 @@ mysql 示例：
 
 启动 Radius 服务
 
-    toughctl daemon -s startup                     # 启动 Radius 服务进程，
+    service toughradius start                     # 启动 Radius 服务进程，
 
 停止服务
 
-    toughctl daemon -s shutdown                    # 停止 Radius 服务进程
+    service toughradius stop                    # 停止 Radius 服务进程
 
 查看状态
 
-    toughctl daemon -s status                      # 查看 Radius 服务进程运行状态
-
-重载配置
-
-    toughctl daemon -s reload                      # 修改配置文件后重新加载服务
-
-查看日志
-
-    toughctl daemon -s "tail -f manage"            # tail 模式查看管理控制台日志
-    toughctl daemon -s "tail -f worker:worker0"    # tail 模式查看 radius 认证记账日志
-    toughctl daemon -s "tail -f task"              # tail 模式查看定时任务日志
-
-> 注意，worker 进程可以配置多个, 进程名为 worker:worker0， worker:worker1 ...
+    service toughradius status                      # 查看 Radius 服务进程运行状态
 
 ### 使用系统
 
