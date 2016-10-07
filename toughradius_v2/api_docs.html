@@ -1,0 +1,858 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>API接口 | ToughRADIUS 教程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.3">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+    
+        <link rel="stylesheet" href="../styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../toughradius_v2/api_models.html" />
+    
+    
+    <link rel="prev" href="../toughradius/pptp.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.5" data-basepath=".." data-revision="Fri Oct 07 2016 22:05:10 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+                
+                <li>
+                    <a href="https://github.com/talkincode/ToughRADIUS" target="blank" class="custom-link">Star ToughRADIUS in Github</a>
+                </li>
+            
+                
+                <li>
+                    <a href="http://forum.toughcloud.net" target="blank" class="custom-link">交流社区</a>
+                </li>
+            
+                
+                <li>
+                    <a href="https://www.gitbook.com/download/pdf/book/jamiesun/toughradius-beginners-guide" target="blank" class="custom-link">下载 PDF 文件</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="toughradius/index.html">
+            
+                
+                    <a href="../toughradius/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        ToughRADIUS 用户手册
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="toughradius/intro.html">
+            
+                
+                    <a href="../toughradius/intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        项目简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toughradius_v2/quickstart.html">
+            
+                
+                    <a href="../toughradius_v2/quickstart.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        快速指南
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="toughradius/routeros.html">
+            
+                
+                    <a href="../toughradius/routeros.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        RouterOS 对接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="toughradius/pptp.html">
+            
+                
+                    <a href="../toughradius/pptp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Linux PPTP 对接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="toughradius_v2/api_docs.html">
+            
+                
+                    <a href="../toughradius_v2/api_docs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        API接口
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="toughradius_v2/api_models.html">
+            
+                
+                    <a href="../toughradius_v2/api_models.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                        数据结构定义
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="toughradius_v2/api_status_code.html">
+            
+                
+                    <a href="../toughradius_v2/api_status_code.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                        返回结果码定义
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="toughradius_v2/api_node.html">
+            
+                
+                    <a href="../toughradius_v2/api_node.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.</b>
+                        
+                        区域信息管理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="toughradius_v2/api_node_query.html">
+            
+                
+                    <a href="../toughradius_v2/api_node_query.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.1.</b>
+                        
+                        区域节点查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="toughradius_v2/api_node_add.html">
+            
+                
+                    <a href="../toughradius_v2/api_node_add.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.2.</b>
+                        
+                        增加区域节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="toughradius_v2/api_node_update.html">
+            
+                
+                    <a href="../toughradius_v2/api_node_update.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.3.</b>
+                        
+                        修改区域节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="toughradius_v2/api_node_delete.html">
+            
+                
+                    <a href="../toughradius_v2/api_node_delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.4.</b>
+                        
+                        删除区域节点
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="toughradius_v2/api_nas.html">
+            
+                
+                    <a href="../toughradius_v2/api_nas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.</b>
+                        
+                        NAS接入设备管理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="toughradius_v2/api_nas_query.html">
+            
+                
+                    <a href="../toughradius_v2/api_nas_query.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.1.</b>
+                        
+                        查询NAS接入设备
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="toughradius_v2/api_nas_add.html">
+            
+                
+                    <a href="../toughradius_v2/api_nas_add.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.2.</b>
+                        
+                        新增NAS接入设备
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="toughradius_v2/api_nas_update.html">
+            
+                
+                    <a href="../toughradius_v2/api_nas_update.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.3.</b>
+                        
+                        修改NAS接入设备
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="toughradius_v2/api_nas_delete.html">
+            
+                
+                    <a href="../toughradius_v2/api_nas_delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.4.</b>
+                        
+                        删除NAS接入设备
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="toughradius_v2/api_product.html">
+            
+                
+                    <a href="../toughradius_v2/api_product.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.</b>
+                        
+                        资费套餐管理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="toughradius_v2/api_product_query.html">
+            
+                
+                    <a href="../toughradius_v2/api_product_query.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.1.</b>
+                        
+                        资费套餐查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="toughradius_v2/api_product_add.html">
+            
+                
+                    <a href="../toughradius_v2/api_product_add.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.2.</b>
+                        
+                        新增资费套餐
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="toughradius_v2/api_product_update.html">
+            
+                
+                    <a href="../toughradius_v2/api_product_update.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.3.</b>
+                        
+                        修改资费套餐
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="toughradius_v2/api_product_delete.html">
+            
+                
+                    <a href="../toughradius_v2/api_product_delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.4.</b>
+                        
+                        删除资费套餐
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="toughradius_v2/api_customer.html">
+            
+                
+                    <a href="../toughradius_v2/api_customer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.</b>
+                        
+                        客户管理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="toughradius_v2/api_customer_query.html">
+            
+                
+                    <a href="../toughradius_v2/api_customer_query.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.1.</b>
+                        
+                        客户信息查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="toughradius_v2/api_customer_auth.html">
+            
+                
+                    <a href="../toughradius_v2/api_customer_auth.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.2.</b>
+                        
+                        客户授权校验
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="toughradius_v2/api_account_password_udpate.html">
+            
+                
+                    <a href="../toughradius_v2/api_account_password_udpate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.3.</b>
+                        
+                        客户密码修改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="toughradius_v2/api_customer_add.html">
+            
+                
+                    <a href="../toughradius_v2/api_customer_add.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.4.</b>
+                        
+                        客户新开户
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="toughradius_v2/api_customer_update.html">
+            
+                
+                    <a href="../toughradius_v2/api_customer_update.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.5.</b>
+                        
+                        客户资料修改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.6" data-path="toughradius_v2/api_account_gen.html">
+            
+                
+                    <a href="../toughradius_v2/api_account_gen.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.6.</b>
+                        
+                        客户账号生成
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.7" data-path="toughradius_v2/api_account_query.html">
+            
+                
+                    <a href="../toughradius_v2/api_account_query.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.7.</b>
+                        
+                        客户账号详情
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.8" data-path="toughradius_v2/api_account_renew.html">
+            
+                
+                    <a href="../toughradius_v2/api_account_renew.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.8.</b>
+                        
+                        客户在线续费
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.9" data-path="toughradius_v2/api_account_delete.html">
+            
+                
+                    <a href="../toughradius_v2/api_account_delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.9.</b>
+                        
+                        客户账号删除
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.10" data-path="toughradius_v2/api_online_query.html">
+            
+                
+                    <a href="../toughradius_v2/api_online_query.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.10.</b>
+                        
+                        在线用户查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.11" data-path="toughradius_v2/api_online_unlock.html">
+            
+                
+                    <a href="../toughradius_v2/api_online_unlock.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.11.</b>
+                        
+                        在线用户解锁
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >ToughRADIUS 教程</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="toughradius%E6%8E%A5%E5%8F%A3%E5%8D%8F%E8%AE%AE%E6%96%87%E6%A1%A3">ToughRADIUS&#x63A5;&#x53E3;&#x534F;&#x8BAE;&#x6587;&#x6863;</h1>
+<h2 id="%E5%8D%8F%E8%AE%AE%E8%AF%B4%E6%98%8E">&#x534F;&#x8BAE;&#x8BF4;&#x660E;</h2>
+<ul>
+<li>&#x534F;&#x8BAE;&#x91C7;&#x7528;&#x57FA;&#x4E8E;http&#x7684;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x6D88;&#x606F;&#x53D1;&#x8D77;&#x65B9;&#xFF1A;&#x7B2C;&#x4E09;&#x65B9;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li>&#x6D88;&#x606F;&#x63A5;&#x53D7;&#x65B9;&#xFF1A;TOUGHRADIUS&#x7CFB;&#x7EDF;&#x3002;</li>
+<li>&#x63A5;&#x53E3;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#xFF1A;HTTP GET &#x6216;&#x8005; POST&#xFF0C;&#x652F;&#x6301;&#x6807;&#x51C6;http1.1&#x534F;&#x8BAE;&#x3002;</li>
+<li>&#x6D88;&#x606F;&#x62A5;&#x6587;&#x7F16;&#x7801;&#xFF1A;UTF-8&#xFF0C;&#x6CE8;&#x610F;&#x5BF9;&#x53C2;&#x6570;&#x8FDB;&#x884C; urlencode &#x7F16;&#x7801;</li>
+<li>&#x63A5;&#x53E3;&#x9274;&#x6743;&#xFF1A;MD5&#x7B7E;&#x540D;&#xFF0C;<code>md5(&#x5171;&#x4EAB;&#x5BC6;&#x94A5;+&#x6392;&#x5E8F;&#x7684;&#x53C2;&#x6570;&#x503C;&#x7EC4;&#x5408;&#x5B57;&#x7B26;&#x4E32;)</code>,&#x7B7E;&#x540D;&#x6821;&#x9A8C;&#x662F;&#x53CC;&#x5411;&#x7684;&#xFF0C;&#x6D88;&#x606F;&#x63A5;&#x6536;&#x65B9;&#x5BF9;&#x8BF7;&#x6C42;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x7B7E;&#x540D;&#x9A8C;&#x8BC1;&#xFF0C;&#x540C;&#x65F6;&#x9700;&#x5BF9;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x7B7E;&#x540D;&#x8FD4;&#x56DE;&#xFF0C;&#x6D88;&#x606F;&#x53D1;&#x8D77;&#x65B9;&#x5BF9;&#x54CD;&#x5E94;&#x7ED3;&#x679C;&#x7684;&#x7B7E;&#x540D;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#x3002;</li>
+<li>&#x5F53;&#x524D;&#x63A5;&#x53E3;&#x7248;&#x672C;&#xFF1A;v1</li>
+</ul>
+<h3 id="api%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">API&#x5E94;&#x7528;&#x573A;&#x666F;</h3>
+<ul>
+<li><p><strong>&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x6269;&#x5C55;</strong>&#xFF1A;ToughRADIUS V2&#x7248;&#x672C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7CBE;&#x7B80;&#x7684;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x5BA2;&#x6237;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x4F1A;&#x663E;&#x5F97;&#x4E0D;&#x591F;&#x7528;&#xFF0C;&#x5229;&#x7528;API&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x901A;&#x8FC7;&#x5DF2;&#x6709;CRM&#x7B49;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4E0E;ToughRADIUS&#x5B9E;&#x73B0;&#x5BF9;&#x63A5;&#x3002;</p>
+</li>
+<li><p><strong>&#x81EA;&#x52A9;&#x670D;&#x52A1;&#x7CFB;&#x7EDF;&#x5B9A;&#x5236;</strong>&#xFF1A;ToughRADIUS V2&#x7248;&#x672C;&#x79FB;&#x9664;&#x4E86;&#x81EA;&#x52A9;&#x670D;&#x52A1;&#x6A21;&#x5757;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x628A;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x7D66;&#x7B2C;&#x4E09;&#x65B9;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+</li>
+<li><p><strong> &#x79FB;&#x52A8;&#x7EC8;&#x7AEF;APP&#x5F00;&#x53D1;</strong>&#xFF1A;&#x5BF9;&#x4E8E;ToughRADIUS V2&#x7248;&#x672C;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x7BA1;&#x7406;&#xFF0C;&#x81EA;&#x670D;&#x52A1;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x5230;&#x79FB;&#x52A8;&#x7EC8;&#x7AEF;&#x7684;&#xFF0C;&#x901A;&#x8FC7;API&#x53EF;&#x4EE5;&#x652F;&#x6301;IOS&#xFF0C;Android&#xFF0C;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x5F00;&#x53D1;&#x6269;&#x5C55;&#x3002;</p>
+</li>
+</ul>
+<h3 id="%E7%A4%BA%E4%BE%8B">&#x793A;&#x4F8B;</h3>
+<pre><code>GET /api/v1/nas/add?sign=C5219018DC9A71232A88606E48554F50&amp;isp_code=default&amp;bas_name=api%20add&amp;ip_addr=10.10.10.1&amp;dns_name=&amp;time_type=0&amp;vendor_id=0&amp;portal_vendor=huaweiv2&amp;bas_secret=123456&amp;coa_port=3799&amp;ac_port=2000 HTTP/1.1
+</code></pre><p>&#x5C06;&#x6240;&#x6709;&#x53C2;&#x6570;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x76F8;&#x52A0;&#x5F97;&#x5230;&#x6392;&#x5E8F;&#x7684;&#x53C2;&#x6570;&#x503C;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#xFF0C;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x6BD4;&#x5982;nonce=123131414,&#x4FDD;&#x8BC1;nonce&#x6BCF;&#x6B21;&#x90FD;&#x4E0D;&#x540C;&#xFF0C;nonce&#x7684;&#x503C;&#x53C2;&#x4E0E;&#x7B7E;&#x540D;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x76F4;&#x63A5;GET&#x63D0;&#x4EA4;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Form&#x8868;&#x5355;&#x63D0;&#x4EA4;</p>
+<h3 id="%E7%AD%BE%E5%90%8D%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83">&#x7B7E;&#x540D;&#x4EE3;&#x7801;&#x53C2;&#x8003;</h3>
+<ul>
+<li><p>python</p>
+<p>  &#x8BF7;&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/talkincode/toughlib/blob/master/toughlib/apiutils.py" target="_blank">https://github.com/talkincode/toughlib/blob/master/toughlib/apiutils.py</a></p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python`
+</span><span class="token comment" spellcheck="true">#coding:utf-8`
+</span><span class="token keyword">import</span> logging
+<span class="token keyword">from</span> hashlib <span class="token keyword">import</span> md5
+
+<span class="token keyword">def</span> make_sign<span class="token punctuation">(</span>api_secret<span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">&quot;&quot;&quot;
+        &gt;&gt;&gt; make_sign(&quot;123456&quot;,[1,&apos;2&apos;,u&apos;&#x4E2D;&#x6587;&apos;])
+        &apos;33C9065427EECA3490C5642C99165145&apos;
+    &quot;&quot;&quot;</span>
+    _params <span class="token operator">=</span> <span class="token punctuation">[</span>p <span class="token keyword">for</span> p <span class="token keyword">in</span> params <span class="token keyword">if</span> p <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">]</span>
+    _params<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    _params<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> api_secret<span class="token punctuation">)</span>
+    strs <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>_params<span class="token punctuation">)</span>
+    mds <span class="token operator">=</span> md5<span class="token punctuation">(</span>strs<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">&apos;utf-8&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> mds<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> check_sign<span class="token punctuation">(</span>api_secret<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">&quot;&quot;&quot;
+        &gt;&gt;&gt;  check_sign(&quot;123456&quot;,dict(code=1,s=&apos;2&apos;,msg=u&apos;&#x4E2D;&#x6587;&apos;,sign=&apos;33C9065427EECA3490C5642C99165145&apos;))
+        True
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;sign&quot;</span> <span class="token operator">not</span> <span class="token keyword">in</span> msg<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+    sign <span class="token operator">=</span> msg<span class="token punctuation">[</span><span class="token string">&apos;sign&apos;</span><span class="token punctuation">]</span>
+    params <span class="token operator">=</span> <span class="token punctuation">[</span>msg<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">&apos;utf-8&apos;</span><span class="token punctuation">)</span> <span class="token keyword">for</span> k <span class="token keyword">in</span> msg <span class="token keyword">if</span> k <span class="token operator">!</span><span class="token operator">=</span> <span class="token string">&apos;sign&apos;</span><span class="token punctuation">]</span>
+    local_sign <span class="token operator">=</span> make_sign<span class="token punctuation">(</span>api_secret<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    result <span class="token operator">=</span> <span class="token punctuation">(</span>sign <span class="token operator">==</span> local_sign<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> result<span class="token punctuation">:</span>
+        logging<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">&quot;check_sign failure, sign:%s != local_sign:%s&quot;</span> <span class="token operator">%</span><span class="token punctuation">(</span>sign<span class="token punctuation">,</span>local_sign<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> result
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../toughradius/pptp.html" class="navigation navigation-prev " aria-label="Previous page: Linux PPTP 对接"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../toughradius_v2/api_models.html" class="navigation navigation-next " aria-label="Next page: 数据结构定义"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"github":{"url":"https://github.com/talkincode/ToughRADIUS"}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
